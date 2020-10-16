@@ -3,7 +3,9 @@ import cgi
 import cgitb
 
 cgitb.enable()
-
+form = cgi.FieldStorage()
+listval = form.getlist('operand')
+numbify = [int(x) for x in listval]
 print("Content-type: text/plain")
 print()
-print("Your job is to make this work")
+print(sum(numbify))
